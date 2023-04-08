@@ -1,4 +1,5 @@
-from kitten import winner
+import kitten.winner
+from kitten.winner import Player
 
 
 def test_no_defuses():
@@ -34,3 +35,7 @@ def test_player2_has_two_defuses():
 def test_players_have_two_defuses():
     assert winner("Kamil", "Daniel", 2, 2, []) == "Daniel"
     assert winner("Daniel", "Kamil", 2, 2, []) == "Kamil"
+
+
+def winner(player1: str, player2: str, player1_defuse: int, player2_defuse: int, cards: list[str]) -> str:
+    return kitten.winner.winner(Player(player1, player1_defuse), Player(player2, player2_defuse), cards)

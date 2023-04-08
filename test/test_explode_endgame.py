@@ -1,4 +1,5 @@
-from kitten import winner
+import kitten.winner
+from kitten.winner import Player
 
 
 def test_one_defuse_in_stack_explode_last():
@@ -29,3 +30,7 @@ def test_two_defuses_in_stack_explode_first():
 def test_initial_defuse_and_defuse_from_cards():
     assert winner("Kamil", "Daniel", 0, 2, ["explode", "defuse"]) == "Daniel"
     assert winner("Daniel", "Kamil", 0, 2, ["explode", "defuse"]) == "Kamil"
+
+
+def winner(player1: str, player2: str, player1_defuse: int, player2_defuse: int, cards: list[str]) -> str:
+    return kitten.winner.winner(Player(player1, player1_defuse), Player(player2, player2_defuse), cards)
