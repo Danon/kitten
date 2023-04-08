@@ -15,10 +15,7 @@ def winner(players: list[Player], deck: list[str]) -> str:
                 players.remove()
             else:
                 players.current.defuses -= 1
-                if players.current.push_at == 0:
-                    stack.add_explode_on_top()
-                else:
-                    stack.add_explode_on_bottom()
+                stack.put_explode_on(players.current.push_at)
         players.next()
         if players.is_only_player:
             return players.current.name

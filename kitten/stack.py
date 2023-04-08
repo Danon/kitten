@@ -6,11 +6,8 @@ class Stack:
     def empty(self) -> bool:
         return len(self.cards) == 0
 
-    def add_explode_on_top(self) -> None:
-        self.cards.append("explode")
-
-    def add_explode_on_bottom(self) -> None:
-        self.cards = ["explode", *self.cards]
+    def put_explode_on(self, position: int) -> None:
+        self.cards.insert(len(self.cards) - position, 'explode')
 
     def pop(self) -> str:
         return self.cards.pop()

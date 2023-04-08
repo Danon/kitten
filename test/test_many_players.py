@@ -34,3 +34,13 @@ def test_three_players_last_player_puts_at_top():
     ]
     # when
     assert winner(players, ['defuse', 'explode', 'explode', 'filler', 'defuse']) == "Mikołaj"
+
+
+def test_player_puts_card_in_the_middle():
+    # given
+    players = [
+        Player("Kamil", 1, push_at=1),
+        Player("Daniel", 0),
+    ]
+    # when
+    assert winner(players, ['filler', 'filler', 'explode']) == "Daniel"
