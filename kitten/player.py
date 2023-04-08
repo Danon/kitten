@@ -1,5 +1,5 @@
 class Player:
-    def __init__(self, name: str, defuses: int, puts_at_top: bool = True):
+    def __init__(self, name: str, defuses: int, push_at: int = 0):
         self.name = name
         self.defuses = defuses
-        self.puts_at_top = puts_at_top
+        self.push_at = push_at
