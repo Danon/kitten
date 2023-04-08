@@ -3,7 +3,14 @@ from kitten.players import Players
 from kitten.stack import Stack
 
 
+class StackException(Exception):
+    pass
+
+
 def winner(players: list[Player], deck: list[str]) -> str:
+    if deck.count("explode") != len(players) - 1:
+        raise StackException()
+
     players = Players(players)
     stack = Stack(deck)
     while not stack.empty:
