@@ -1,5 +1,5 @@
+import kitten.winner
 from kitten.player import Player
-from kitten.winner import winner
 
 
 def test_put_back_on_top_player1_has_defuse():
@@ -25,5 +25,11 @@ def test_put_back_on_bottom_players_have_defuse():
 def test_put_back_many_times():
     # given
     cards = ['defuse', 'explode', 'defuse', 'defuse', 'defuse']
+    player1 = Player("Kamil", 0, puts_at_top=False)
+    player2 = Player("Daniel", 0, puts_at_top=True)
     # when
-    assert winner(Player("Kamil", 0, puts_at_top=False), Player("Daniel", 0, puts_at_top=True), cards) == "Daniel"
+    assert winner(player1, player2, cards) == "Daniel"
+
+
+def winner(player1: Player, player2: Player, cards: list[str]) -> str:
+    return kitten.winner.winner([player1, player2], cards)

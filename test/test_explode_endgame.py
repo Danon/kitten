@@ -33,4 +33,4 @@ def test_initial_defuse_and_defuse_from_cards():
 
 
 def winner(player1: str, player2: str, player1_defuse: int, player2_defuse: int, cards: list[str]) -> str:
-    return kitten.winner.winner(Player(player1, player1_defuse), Player(player2, player2_defuse), cards)
+    return kitten.winner.winner([Player(player1, player1_defuse), Player(player2, player2_defuse)], cards)

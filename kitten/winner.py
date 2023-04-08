@@ -3,8 +3,8 @@ from kitten.players import Players
 from kitten.stack import Stack
 
 
-def winner(player1: Player, player2: Player, cards: list[str]) -> str:
-    players = Players(player1, player2)
+def winner(players: list[Player], cards: list[str]) -> str:
+    players = Players(*players)
     stack = Stack(cards)
     while not stack.empty:
         last_card = stack.pop()
