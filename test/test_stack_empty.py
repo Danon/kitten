@@ -1,5 +1,5 @@
 import kitten.winner
-from kitten.winner import Player
+from kitten.player import Player
 
 
 def test_no_defuses():
