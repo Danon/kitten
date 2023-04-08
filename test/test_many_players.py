@@ -1,4 +1,5 @@
 from kitten.player import Player
+from kitten.bot import Bot
 from kitten.winner import winner
 
 
@@ -44,3 +45,14 @@ def test_player_puts_card_in_the_middle():
     ]
     # when
     assert winner(players, ['filler', 'filler', 'explode']) == "Daniel"
+
+
+def test_player_puts_card_in_multiple_places():
+    # given
+    players = [
+        Player("Kamil", 1, push_at=Bot(2, 4)),
+        Player("Daniel", 2),
+    ]
+    cards = ["defuse", 'filler', "filler", "filler", "defuse", "filler", 'explode']
+    # when
+    assert winner(players, cards) == "Kamil"
