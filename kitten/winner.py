@@ -3,9 +3,9 @@ from kitten.players import Players
 from kitten.stack import Stack
 
 
-def winner(players: list[Player], cards: list[str]) -> str:
+def winner(players: list[Player], deck: list[str]) -> str:
     players = Players(*players)
-    stack = Stack(cards)
+    stack = Stack(deck)
     while not stack.empty:
         last_card = stack.pop()
         if last_card == "defuse":
