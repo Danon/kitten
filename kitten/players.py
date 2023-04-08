@@ -15,7 +15,7 @@ class Players:
 
     def remove(self) -> None:
         self.players.pop(self.index)
-        self.next()
+        self.index -= 1
 
     @property
     def is_only_player(self) -> bool:
