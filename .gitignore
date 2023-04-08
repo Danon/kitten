@@ -1,0 +1,6 @@
+# Project
+.idea/
+*.iml
+
+# Python
+venv/
